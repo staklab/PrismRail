@@ -1,0 +1,41 @@
+name: Feature Request / 功能建议
+description: Suggest a new feature, improvement, or adapter support idea.
+title: "[Feature] "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve PrismRail.
+        感谢你帮助改进 PrismRail。
+  - type: input
+    id: summary
+    attributes:
+      label: Summary / 建议概述
+      description: What would you like to add or improve?
+      placeholder: Add support for another LLM chat site
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / 当前问题
+      description: What user problem does this solve?
+      placeholder: Long conversations on this site are hard to navigate.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal / 方案建议
+      description: Describe the idea or expected behavior.
+      placeholder: Add a new adapter and support timeline extraction for this site.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context / 补充信息
+      description: Links, screenshots, or examples if helpful.
+      placeholder: Optional

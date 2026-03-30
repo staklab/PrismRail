@@ -1,0 +1,60 @@
+name: Bug Report / Bug 反馈
+description: Report a bug, regression, or site compatibility problem.
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem with PrismRail.
+        感谢你反馈 PrismRail 的问题。
+  - type: input
+    id: summary
+    attributes:
+      label: Summary / 问题概述
+      description: What went wrong?
+      placeholder: Timeline marker jumps to the wrong position
+    validations:
+      required: true
+  - type: dropdown
+    id: site
+    attributes:
+      label: Site / 站点
+      options:
+        - ChatGPT
+        - Gemini
+        - Claude
+        - DeepSeek
+        - Doubao
+        - GLM
+        - Grok
+        - Other / 其他
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps To Reproduce / 复现步骤
+      description: How can we reproduce the issue?
+      placeholder: |
+        1. Open a long conversation
+        2. Click the 40% marker
+        3. Observe the jump position
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior / 预期行为
+      placeholder: The marker should jump to the start of the mapped message block.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment / 环境信息
+      description: Browser, OS, extension version, and any extra context.
+      placeholder: Chrome 135 / macOS / PrismRail v0.1.0
+    validations:
+      required: true

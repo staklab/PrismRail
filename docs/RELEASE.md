@@ -89,15 +89,11 @@ npm run check
 - `dist/extension/`
 - `src/icons/`
 - `README.md`
-- `README.zh-CN.md`
-- `README.en.md`
 - `docs/`
 
 3. 建议同时发布以下文档：
 
 - `README.md`
-- `README.zh-CN.md`
-- `README.en.md`
 - `CONTRIBUTING.md`
 - `docs/PRIVACY-POLICY.md`
 - `docs/STORE-LISTING.md`
