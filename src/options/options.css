@@ -1,0 +1,92 @@
+:root {
+  color-scheme: light;
+  --bg: linear-gradient(135deg, #f3f5fb 0%, #eef3ff 100%);
+  --card: rgba(255, 255, 255, 0.82);
+  --text: #182235;
+  --muted: #5c6780;
+  --line: rgba(24, 34, 53, 0.12);
+  --accent: #165dff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.settings-shell {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.settings-card {
+  width: min(100%, 640px);
+  padding: 28px;
+  border-radius: 24px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  box-shadow: 0 22px 60px rgba(17, 30, 52, 0.1);
+  backdrop-filter: blur(16px);
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 4vw, 2.7rem);
+}
+
+.lead {
+  margin: 0 0 24px;
+  color: var(--muted);
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.field span {
+  font-weight: 600;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+button {
+  margin-top: 12px;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 14px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+#status {
+  min-height: 20px;
+  margin-top: 12px;
+  color: var(--muted);
+}

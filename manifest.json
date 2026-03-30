@@ -1,0 +1,95 @@
+{
+  "manifest_version": 3,
+  "name": "PrismRail",
+  "version": "0.1.0",
+  "description": "Glass-style timeline rail for long AI conversations.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://chat.openai.com/*",
+    "https://chatgpt.com/*",
+    "https://gemini.google.com/*",
+    "https://claude.ai/*",
+    "https://deepseek.com/*",
+    "https://www.deepseek.com/*",
+    "https://chat.deepseek.com/*",
+    "https://doubao.com/*",
+    "https://www.doubao.com/*",
+    "https://inhouse.doubao.com/*",
+    "https://chatglm.cn/*",
+    "https://www.chatglm.cn/*",
+    "https://z.ai/*",
+    "https://www.z.ai/*",
+    "https://chat.z.ai/*",
+    "https://grok.com/*",
+    "https://www.grok.com/*"
+  ],
+  "background": {
+    "service_worker": "src/background/service-worker.js",
+    "type": "module"
+  },
+  "icons": {
+    "16": "src/icons/prismrail-16.png",
+    "32": "src/icons/prismrail-32.png",
+    "48": "src/icons/prismrail-48.png",
+    "128": "src/icons/prismrail-128.png"
+  },
+  "action": {
+    "default_title": "PrismRail",
+    "default_icon": {
+      "16": "src/icons/prismrail-16.png",
+      "32": "src/icons/prismrail-32.png",
+      "48": "src/icons/prismrail-48.png"
+    },
+    "default_popup": "src/popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.openai.com/*",
+        "https://chatgpt.com/*",
+        "https://gemini.google.com/*",
+        "https://claude.ai/*",
+        "https://deepseek.com/*",
+        "https://www.deepseek.com/*",
+        "https://chat.deepseek.com/*",
+        "https://doubao.com/*",
+        "https://www.doubao.com/*",
+        "https://inhouse.doubao.com/*",
+        "https://chatglm.cn/*",
+        "https://www.chatglm.cn/*",
+        "https://z.ai/*",
+        "https://www.z.ai/*",
+        "https://chat.z.ai/*",
+        "https://grok.com/*",
+        "https://www.grok.com/*"
+      ],
+      "js": [
+        "src/content/bootstrap.js"
+      ],
+      "css": [
+        "src/content/content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/content/*.js",
+        "src/content/adapters/*.js",
+        "src/content/performance/*.js",
+        "src/content/shared/*.js",
+        "src/content/timeline/*.js",
+        "src/shared/*.js"
+      ],
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://gemini.google.com/*",
+        "https://claude.ai/*"
+      ]
+    }
+  ]
+}

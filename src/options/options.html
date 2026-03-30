@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PrismRail Settings</title>
+    <link rel="stylesheet" href="./options.css" />
+  </head>
+  <body>
+    <main class="settings-shell">
+      <section class="settings-card">
+        <h1>PrismRail</h1>
+        <p class="lead">调整时间轴和长对话优化策略。</p>
+        <form id="settings-form">
+          <label class="field">
+            <span>启用插件</span>
+            <input id="enabled" type="checkbox" />
+          </label>
+          <label class="field">
+            <span>进入重负载模式的消息数量阈值</span>
+            <input id="messageThreshold" type="number" min="8" max="300" step="1" />
+          </label>
+          <label class="field">
+            <span>悬浮预览字符数</span>
+            <input id="previewLength" type="number" min="40" max="200" step="1" />
+          </label>
+          <label class="field">
+            <span>自动折叠超长代码块</span>
+            <input id="collapseCodeBlocks" type="checkbox" />
+          </label>
+          <label class="field">
+            <span>代码块折叠阈值高度（px）</span>
+            <input id="codeBlockHeight" type="number" min="180" max="1200" step="20" />
+          </label>
+          <button type="submit">保存设置</button>
+          <p id="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+    <script src="./options.js"></script>
+  </body>
+</html>

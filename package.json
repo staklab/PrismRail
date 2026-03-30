@@ -1,0 +1,13 @@
+{
+  "name": "prismrail",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Glass-style browser extension for navigating long AI conversations with a fixed timeline rail.",
+  "license": "MIT",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "package": "npm run build && node scripts/package-release.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm run build && npm run test"
+  }
+}

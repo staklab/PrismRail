@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PrismRail</title>
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <section class="hero">
+        <p class="eyebrow">PrismRail</p>
+        <h1>Long-chat performance, without leaving the page.</h1>
+        <p class="lede">
+          Reduce scroll jank, keep a local timeline, and jump through long conversations faster.
+        </p>
+      </section>
+
+      <section class="panel">
+        <label class="toggle">
+          <span>
+            <strong>Enable extension</strong>
+            <small>Turn timeline and offscreen optimization on or off.</small>
+          </span>
+          <input id="enabled" type="checkbox" />
+        </label>
+
+        <label class="toggle">
+          <span>
+            <strong>Local preview</strong>
+            <small>Show first-sentence previews and local keywords on hover.</small>
+          </span>
+          <input id="previewEnabled" type="checkbox" />
+        </label>
+
+        <div class="field">
+          <label for="performanceMode">Performance mode</label>
+          <select id="performanceMode">
+            <option value="balanced">Balanced</option>
+            <option value="focus">Focus</option>
+          </select>
+          <small>
+            Balanced is safer. Focus is more aggressive for very long conversations.
+          </small>
+        </div>
+
+        <label class="toggle">
+          <span>
+            <strong>Start collapsed</strong>
+            <small>Keep the timeline as a pill until you open it.</small>
+          </span>
+          <input id="collapsed" type="checkbox" />
+        </label>
+      </section>
+
+      <section class="meta">
+        <div>
+          <strong>Works locally</strong>
+          <p>No API calls are required for previews or navigation.</p>
+        </div>
+        <div>
+          <strong>Responsive UI</strong>
+          <p>Desktop uses a side rail. Narrow screens switch to a floating panel.</p>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./popup.js"></script>
+  </body>
+</html>

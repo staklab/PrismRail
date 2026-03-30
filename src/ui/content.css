@@ -1,0 +1,340 @@
+:root {
+  --llmtn-panel-width: 58px;
+  --llmtn-panel-height: clamp(312px, 46vh, 388px);
+  --llmtn-panel-gap: clamp(14px, 1.8vw, 24px);
+  --llmtn-shell-bg: rgba(255, 255, 255, 0.34);
+  --llmtn-shell-bg-2: rgba(255, 255, 255, 0.16);
+  --llmtn-shell-border: rgba(255, 255, 255, 0.42);
+  --llmtn-shell-edge: rgba(148, 163, 184, 0.18);
+  --llmtn-shell-shadow: 0 26px 52px rgba(15, 23, 42, 0.12);
+  --llmtn-track: rgba(148, 163, 184, 0.24);
+  --llmtn-progress: rgba(114, 197, 255, 0.74);
+  --llmtn-node: rgba(255, 255, 255, 0.82);
+  --llmtn-node-border: rgba(255, 255, 255, 0.62);
+  --llmtn-node-glow: rgba(114, 197, 255, 0.24);
+  --llmtn-node-active: #74c8ff;
+  --llmtn-text: rgba(15, 23, 42, 0.92);
+  --llmtn-text-muted: rgba(71, 85, 105, 0.82);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --llmtn-shell-bg: rgba(15, 23, 42, 0.34);
+    --llmtn-shell-bg-2: rgba(255, 255, 255, 0.04);
+    --llmtn-shell-border: rgba(255, 255, 255, 0.16);
+    --llmtn-shell-edge: rgba(255, 255, 255, 0.06);
+    --llmtn-shell-shadow: 0 28px 56px rgba(2, 6, 23, 0.3);
+    --llmtn-track: rgba(203, 213, 225, 0.18);
+    --llmtn-progress: rgba(139, 215, 255, 0.76);
+    --llmtn-node: rgba(248, 250, 252, 0.84);
+    --llmtn-node-border: rgba(255, 255, 255, 0.42);
+    --llmtn-node-glow: rgba(125, 211, 252, 0.22);
+    --llmtn-node-active: #9fddff;
+    --llmtn-text: rgba(241, 245, 249, 0.94);
+    --llmtn-text-muted: rgba(203, 213, 225, 0.82);
+  }
+}
+
+#llmtn-panel {
+  position: fixed;
+  top: 50%;
+  right: var(--llmtn-panel-gap);
+  transform: translateY(-50%);
+  z-index: 2147483643;
+  width: var(--llmtn-panel-width);
+  height: var(--llmtn-panel-height);
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  pointer-events: none;
+}
+
+#llmtn-panel.llmtn-hidden {
+  display: none;
+}
+
+.llmtn-shell {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  border: 1px solid var(--llmtn-shell-border);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.08)),
+    linear-gradient(180deg, var(--llmtn-shell-bg), var(--llmtn-shell-bg-2));
+  box-shadow: var(--llmtn-shell-shadow);
+  backdrop-filter: blur(24px) saturate(1.16);
+  -webkit-backdrop-filter: blur(24px) saturate(1.16);
+  pointer-events: auto;
+  overflow: visible;
+}
+
+.llmtn-shell::before,
+.llmtn-shell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.llmtn-shell::before {
+  inset: 1px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  mask: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.16));
+}
+
+.llmtn-shell::after {
+  inset: 6px 8px auto;
+  height: 28%;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0));
+  opacity: 0.72;
+}
+
+.llmtn-track,
+.llmtn-progress {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 999px;
+}
+
+.llmtn-track {
+  top: 24px;
+  bottom: 24px;
+  width: 3px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.18) 12%, var(--llmtn-track) 40%, var(--llmtn-track) 60%, rgba(255, 255, 255, 0.1) 88%, rgba(255, 255, 255, 0));
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+    0 0 14px rgba(255, 255, 255, 0.08);
+}
+
+.llmtn-progress {
+  top: 24px;
+  bottom: 24px;
+  width: 2px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0)),
+    linear-gradient(180deg, rgba(154, 223, 255, 0.34), var(--llmtn-progress));
+  transform: translateX(-50%) scaleY(var(--llmtn-progress-scale, 0.08));
+  transform-origin: top;
+  opacity: 0.76;
+  filter: blur(0.2px);
+  box-shadow: 0 0 14px rgba(114, 197, 255, 0.34);
+}
+
+.llmtn-nodes {
+  position: absolute;
+  inset: 24px 0;
+}
+
+.llmtn-node {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  transform: translate(-50%, -50%);
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  color: var(--llmtn-text);
+}
+
+.llmtn-node::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+}
+
+.llmtn-node-core {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.22) 46%, rgba(125, 211, 252, 0.3)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.16));
+  border: 1px solid var(--llmtn-node-border);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.52),
+    0 4px 12px rgba(15, 23, 42, 0.12),
+    0 0 0 0 rgba(108, 184, 255, 0);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease,
+    opacity 160ms ease;
+  opacity: 0.9;
+}
+
+.llmtn-node:hover .llmtn-node-core,
+.llmtn-node:focus-visible .llmtn-node-core {
+  transform: translate(-50%, -50%) scale(1.14);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 4px 16px rgba(15, 23, 42, 0.14),
+    0 0 0 10px var(--llmtn-node-glow);
+}
+
+.llmtn-node.is-active .llmtn-node-core {
+  background:
+    radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.36) 42%, var(--llmtn-node-active)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.2));
+  transform: translate(-50%, -50%) scale(1.34);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 0 0 10px rgba(108, 184, 255, 0.14),
+    0 12px 28px rgba(108, 184, 255, 0.22);
+}
+
+.llmtn-node[data-kind="start"] .llmtn-node-core,
+.llmtn-node[data-kind="end"] .llmtn-node-core {
+  width: 13px;
+  height: 13px;
+}
+
+.llmtn-node:focus-visible {
+  outline: none;
+}
+
+.llmtn-tooltip {
+  position: absolute;
+  right: calc(100% + 16px);
+  top: 50%;
+  width: min(260px, 34vw);
+  padding: 14px 16px;
+  border-radius: 22px;
+  border: 1px solid var(--llmtn-shell-border);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.08)),
+    linear-gradient(180deg, var(--llmtn-shell-bg), var(--llmtn-shell-bg-2));
+  box-shadow: var(--llmtn-shell-shadow);
+  backdrop-filter: blur(24px) saturate(1.16);
+  -webkit-backdrop-filter: blur(24px) saturate(1.16);
+  color: var(--llmtn-text);
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-6px, -50%) scale(0.98);
+  transition: opacity 140ms ease, transform 140ms ease;
+}
+
+.llmtn-tooltip[hidden] {
+  display: block;
+  visibility: hidden;
+}
+
+.llmtn-tooltip.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, -50%) scale(1);
+}
+
+.llmtn-tooltip-eyebrow {
+  font: 600 11px/1.1 "Avenir Next", "Segoe UI", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #38bdf8;
+}
+
+.llmtn-tooltip-title {
+  margin-top: 6px;
+  font: 600 13px/1.3 "Avenir Next", "Segoe UI", sans-serif;
+}
+
+.llmtn-tooltip-body {
+  margin: 10px 0 0;
+  font: 500 12px/1.55 "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--llmtn-text-muted);
+}
+
+.llmtn-tooltip-meta {
+  margin-top: 10px;
+  font: 500 11px/1.3 "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--llmtn-text-muted);
+}
+
+.llmtn-message {
+  content-visibility: auto;
+  contain: layout style paint;
+  contain-intrinsic-size: 520px auto;
+  scroll-margin-top: 90px;
+  scroll-margin-bottom: 90px;
+}
+
+.llmtn-heavy-thread .llmtn-message {
+  scroll-margin-top: 96px;
+}
+
+.llmtn-code-shell {
+  position: relative;
+  margin-top: 8px;
+}
+
+.llmtn-code-shell.llmtn-collapsed {
+  max-height: var(--llmtn-code-height, 320px);
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.llmtn-code-shell.llmtn-collapsed::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 56px;
+  background: linear-gradient(180deg, rgba(15, 18, 24, 0), rgba(15, 18, 24, 0.78));
+  pointer-events: none;
+}
+
+.llmtn-code-toggle {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(108, 184, 255, 0.12);
+  color: #1d4ed8;
+  font: 600 12px/1 "Avenir Next", "Segoe UI", sans-serif;
+  cursor: pointer;
+}
+
+.llmtn-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --llmtn-panel-width: 56px;
+    --llmtn-panel-height: clamp(282px, 42vh, 344px);
+    --llmtn-panel-gap: 16px;
+  }
+
+  .llmtn-tooltip {
+    width: min(240px, 42vw);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --llmtn-panel-width: 50px;
+    --llmtn-panel-height: clamp(252px, 38vh, 300px);
+    --llmtn-panel-gap: 12px;
+  }
+
+  .llmtn-tooltip {
+    width: min(220px, 56vw);
+    right: calc(100% + 10px);
+    padding: 12px 14px;
+  }
+}

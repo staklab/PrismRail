@@ -1,0 +1,50 @@
+<svg width="440" height="280" viewBox="0 0 440 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="34" y1="18" x2="389" y2="262" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7FCFF"/>
+      <stop offset="0.54" stop-color="#E7F4FF"/>
+      <stop offset="1" stop-color="#D0E4FA"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="40" x2="0" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0.56"/>
+      <stop offset="1" stop-color="white" stop-opacity="0.14"/>
+    </linearGradient>
+    <linearGradient id="rail" x1="354" y1="76" x2="354" y2="214" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.18" stop-color="#FFFFFF" stop-opacity="0.82"/>
+      <stop offset="0.55" stop-color="#78CBFF"/>
+      <stop offset="0.84" stop-color="#FFFFFF" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="440" height="280" rx="36" fill="url(#bg)"/>
+  <circle cx="78" cy="34" r="78" fill="#FFFFFF" fill-opacity="0.42"/>
+  <circle cx="412" cy="256" r="96" fill="#FFFFFF" fill-opacity="0.36"/>
+
+  <rect x="24" y="28" width="392" height="224" rx="30" fill="#FFFFFF" fill-opacity="0.24" stroke="#FFFFFF" stroke-opacity="0.42"/>
+
+  <g>
+    <rect x="38" y="48" width="264" height="22" rx="11" fill="#FFFFFF" fill-opacity="0.46"/>
+    <rect x="38" y="84" width="242" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.38"/>
+    <rect x="38" y="108" width="214" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.34"/>
+    <rect x="38" y="144" width="228" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.38"/>
+    <rect x="38" y="168" width="188" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.34"/>
+    <rect x="38" y="204" width="246" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.38"/>
+  </g>
+
+  <g>
+    <rect x="324" y="44" width="60" height="192" rx="30" fill="url(#glass)" stroke="white" stroke-opacity="0.52"/>
+    <rect x="352" y="72" width="4" height="136" rx="2" fill="url(#rail)"/>
+    <circle cx="354" cy="82" r="8" fill="#FDFEFF" fill-opacity="0.92" stroke="white" stroke-opacity="0.68"/>
+    <circle cx="354" cy="102" r="6" fill="#FDFEFF" fill-opacity="0.86" stroke="white" stroke-opacity="0.62"/>
+    <circle cx="354" cy="122" r="6" fill="#FDFEFF" fill-opacity="0.86" stroke="white" stroke-opacity="0.62"/>
+    <circle cx="354" cy="142" r="10" fill="#86D2FF" stroke="white" stroke-opacity="0.74"/>
+    <circle cx="354" cy="162" r="6" fill="#FDFEFF" fill-opacity="0.86" stroke="white" stroke-opacity="0.62"/>
+    <circle cx="354" cy="182" r="6" fill="#FDFEFF" fill-opacity="0.86" stroke="white" stroke-opacity="0.62"/>
+    <circle cx="354" cy="202" r="8" fill="#FDFEFF" fill-opacity="0.92" stroke="white" stroke-opacity="0.68"/>
+  </g>
+
+  <text x="40" y="242" fill="#24435C" font-family="SF Pro Display, Avenir Next, Segoe UI, sans-serif" font-size="26" font-weight="700">PrismRail</text>
+  <text x="154" y="242" fill="#54728B" font-family="SF Pro Text, Avenir Next, Segoe UI, sans-serif" font-size="12" font-weight="600" letter-spacing="0.16em">FOR LONG AI CONVERSATIONS</text>
+</svg>
