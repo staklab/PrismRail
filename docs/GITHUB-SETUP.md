@@ -4,7 +4,7 @@
 
 Recommended GitHub repository description:
 
-`Glass-style browser extension for navigating long AI conversations with a fixed timeline rail.`
+`Timeline navigation for long AI chats.`
 
 ## About Links
 
@@ -70,4 +70,4 @@ Safari packaging remains a separate step.
 
 If you want a shorter About panel tagline:
 
-`Timeline navigation for long AI conversations.`
+`Timeline navigation for long AI chats.`

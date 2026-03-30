@@ -5,8 +5,6 @@
 [![Check](https://img.shields.io/github/actions/workflow/status/staklab/PrismRail/check.yml?branch=main&label=check)](https://github.com/staklab/PrismRail/actions/workflows/check.yml)
 [![Issues](https://img.shields.io/github/issues/staklab/PrismRail)](https://github.com/staklab/PrismRail/issues)
 
-![PrismRail Preview](./assets/store/prismrail-marquee-1400x560.png)
-
 **Language / 语言**
 
 [English](#en) | [中文](#zh)
@@ -14,7 +12,7 @@
 A modern glass-style browser extension for navigating long AI conversations.  
 一个用于长 AI 对话导航的现代玻璃风格浏览器插件。
 
-[Issues](https://github.com/staklab/PrismRail/issues) · [Pull Requests](https://github.com/staklab/PrismRail/pulls) · [Contributing](./CONTRIBUTING.md) · [Roadmap](./ROADMAP.md) · [Changelog](./CHANGELOG.md)
+[Issues](https://github.com/staklab/PrismRail/issues) · [Pull Requests](https://github.com/staklab/PrismRail/pulls) · [Contributing](./CONTRIBUTING.md) · [Changelog](./CHANGELOG.md)
 
 <a id="en"></a>
 ## English
@@ -24,8 +22,6 @@ Switch language: [English](#en) | [中文](#zh)
 ### Overview
 
 PrismRail adds a subtle timeline rail to the right side of long AI chat pages, helping users move through large conversations without relying only on the native scrollbar.
-
-It is built for people who regularly read, review, and revisit long threads on modern LLM websites.
 
 ### Highlights
 
@@ -59,14 +55,6 @@ npm run build
 
 Then load `dist/extension` as an unpacked extension in Chrome or Edge.
 
-### Repository Guide
-
-- `src/` extension source code
-- `docs/` architecture, UI, privacy, release, and policy documents
-- `assets/` promo assets and screenshots
-- `tests/` automated tests
-- `scripts/` build and packaging scripts
-
 ### Contributing
 
 Contributions are welcome.
@@ -81,16 +69,6 @@ Use GitHub Issues for bug reports, compatibility problems, adapter requests, and
 
 - [Open a new issue](https://github.com/staklab/PrismRail/issues/new/choose)
 - [Browse existing issues](https://github.com/staklab/PrismRail/issues)
-
-### Roadmap
-
-Near-term priorities:
-
-- improve adapter resilience across supported sites
-- polish the glass timeline interaction details
-- strengthen release packaging and store-readiness
-
-See the full plan in [ROADMAP.md](./ROADMAP.md).
 
 ### FAQ
 
@@ -109,7 +87,6 @@ The current release is built around Chromium-based browsers. Safari still requir
 - [Code of Conduct](./CODE_OF_CONDUCT.md)
 - [Security Policy](./SECURITY.md)
 - [Support](./SUPPORT.md)
-- [Roadmap](./ROADMAP.md)
 - [Changelog](./CHANGELOG.md)
 - [Architecture](./docs/ARCHITECTURE.md)
 - [UI Spec](./docs/UI-SPEC.md)
@@ -133,8 +110,6 @@ Released under the MIT License. See [LICENSE](./LICENSE).
 ### 项目简介
 
 PrismRail 是一个为长 AI 对话页面设计的右侧时间轴导航插件。它以尽量低打扰的方式融入 ChatGPT、Claude、Gemini 等页面，帮助用户在超长对话里快速定位、跳转和回溯上下文。
-
-它面向的是需要频繁阅读、整理、回看长对话内容的用户。
 
 ### 核心特性
 
@@ -168,14 +143,6 @@ npm run build
 
 构建完成后，将 `dist/extension` 作为已解压扩展加载到 Chrome 或 Edge。
 
-### 仓库结构
-
-- `src/` 插件源码
-- `docs/` 架构、UI、隐私、发布和规范文档
-- `assets/` 展示素材与截图资源
-- `tests/` 自动化测试
-- `scripts/` 构建与打包脚本
-
 ### 贡献
 
 欢迎提交代码、文档优化、Bug 修复以及站点适配改进。
@@ -190,16 +157,6 @@ Bug、兼容性问题、站点适配请求和功能建议都可以通过 GitHub 
 
 - [提交新 Issue](https://github.com/staklab/PrismRail/issues/new/choose)
 - [查看现有 Issues](https://github.com/staklab/PrismRail/issues)
-
-### Roadmap
-
-当前阶段的重点包括：
-
-- 提高已支持站点的适配稳定性
-- 继续打磨玻璃感时间轴的交互细节
-- 完善发布包装与商店上架准备
-
-完整计划见 [ROADMAP.md](./ROADMAP.md)。
 
 ### FAQ
 
@@ -218,7 +175,6 @@ Bug、兼容性问题、站点适配请求和功能建议都可以通过 GitHub 
 - [行为准则](./CODE_OF_CONDUCT.md)
 - [安全策略](./SECURITY.md)
 - [支持说明](./SUPPORT.md)
-- [开发路线图](./ROADMAP.md)
 - [更新日志](./CHANGELOG.md)
 - [技术架构](./docs/ARCHITECTURE.md)
 - [UI 规格](./docs/UI-SPEC.md)
